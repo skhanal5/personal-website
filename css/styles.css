@@ -1,0 +1,92 @@
+@import url(//db.onlinewebfonts.com/c/548e77e130ea884c764acabe1ba1ad63?family=0Arame);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap%22");
+
+:root {
+    --main-color: #0075F2;
+    --secondary-color: #268fff;
+    --bg-color: black;
+    --text-color: white;
+    --accent-color: #1C1C1C;
+    --font: 'Arame', sans-serif;
+    --font-accent: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0px;
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+
+.grid-layout {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: [margin-left-start main-start] 80px [margin-left-end] auto [margin-right-start] 80px [main-end margin-right-end];
+}
+
+.left {
+    position: relative;
+}
+
+.right {
+    position: relative;
+}
+
+.intro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 7vh;
+}
+
+.content-banner {
+    height: 50px;
+    width: 200px;
+    background: var(--main-color);
+    position: relative;
+}
+
+.content-banner:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    border-top: 20px solid black;
+    border-right: 20px solid var(--main-color);
+    width: 100;
+}
+
+.content-text {
+    position: absolute;
+    left: 18%;
+    font-family: var(--font);
+    font-size: 2.5rem;
+}
+
+.intro-content {
+    margin: auto;
+    padding: 20px;
+}
+
+.intro-description {
+    font-size: 1.25rem;
+    font-family: var(--font-accent);
+}
+
+.intro-text {
+    font-size: 2rem;
+    font-family: var(--font);
+    margin: auto;
+}
