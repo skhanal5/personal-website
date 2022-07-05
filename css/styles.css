@@ -13,6 +13,7 @@
 
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -24,6 +25,7 @@ body {
     margin: 0px;
     box-sizing: border-box;
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 .grid-layout {
@@ -33,19 +35,15 @@ body {
     height: 100%;
     max-width: 100vw;
     display: grid;
-    justify-content: stretch;
+    justify-content: space-between;
     grid-template-columns: [margin-left-start main-start] 80px [margin-left-end] auto [margin-right-start] 80px [main-end margin-right-end];
 }
 
-.left {
+.left, .right {
     position: relative;
 }
 
-.right {
-    position: relative;
-}
-
-.intro {
+.intro, .skills {
     position: relative;
     display: flex;
     justify-content: center;
@@ -53,7 +51,7 @@ body {
 }
 
 .content-banner {
-    height: 50px;
+    height: 40px;
     width: 200px;
     background: var(--main-color);
     position: relative;
@@ -68,11 +66,40 @@ body {
     width: 100;
 }
 
+.content-banner-flipped {
+    height: 40px;
+    width: 200px;
+    background: var(--main-color);
+    position: relative;
+    float: right;
+}
+
+.content-banner-flipped:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    border-top: 20px solid black;
+    border-left: 20px solid var(--main-color);
+    width: 100;
+}
+
 .content-text {
     position: absolute;
-    left: 18%;
+    left: 25%;
     font-family: var(--font);
-    font-size: 2.5rem;
+    font-size: 2.0rem;
+}
+
+.content-text-flipped {
+    position: absolute;
+    right: 20%;
+    font-family: var(--font);
+    font-size: 2.0rem;
+}
+
+.intro{
+    padding: 10px;
+    margin-bottom: 30px;
 }
 
 .intro-content {
@@ -81,12 +108,79 @@ body {
 }
 
 .intro-description {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-family: var(--font-accent);
 }
 
 .intro-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: var(--font);
     margin: auto;
+}
+
+.vertical {
+    top: 0px;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, transparent calc(50% - 0.81px), var(--accent-color) calc(50% - 0.8px), var(--accent-color) calc(50% + 0.8px), transparent calc(50% + 0.81px), transparent 100%);
+}
+
+.underline {
+    border-bottom: solid 1px var(--secondary-color);
+    border-width: 3px;
+}
+
+.experience-title {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	margin: -25px -8px;
+    font-family: var(--font);
+    font-size: 2.5rem;
+}
+
+.experience-title::before,
+.experience-title::after {
+	content: "";
+	flex-grow: 1;
+	background: var(--accent-color);
+	height: 2px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 8px;
+}
+
+.bracket {
+    color:var(--main-color);
+    margin: 0;
+    padding: 0;
+}
+
+.experience-container{
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    height: 100%;
+    margin: auto;
+    padding: 50px;
+}
+
+.experience-content{
+    font-family: var(--font-accent);
+    font-size: 1.2rem;
+}
+
+footer{
+    position: fixed;
+    width: 100%;
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-color: var(--accent-color);
+}
+
+.footer-content {
+    height: 100px;
+    margin: auto;
+    width: 400px;
+    text-align:center;
+    padding:10px;
+    font-family: var(--font-accent);
 }
