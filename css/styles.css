@@ -1,15 +1,22 @@
-@import url(//db.onlinewebfonts.com/c/548e77e130ea884c764acabe1ba1ad63?family=0Arame);
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap%22");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600;700&display=swap');
+
+
+/* Reusable variables */
 
 :root {
     --main-color: #0075F2;
     --secondary-color: #268fff;
-    --bg-color: black;
-    --text-color: white;
-    --accent-color: #1C1C1C;
-    --font: 'Arame', sans-serif;
-    --font-accent: 'Poppins', sans-serif;
+    --bg-color: white;
+    --text-color: black;
+    --accent-color: #e1e3e1;
+    --font: 'Inter', sans-serif;
+    --extra-light: 200;
+    --light: 300;
+    --semi-bold: 600;
+    --bold: 700;
 }
+
+/* Default rules */
 
 * {
     margin: 0;
@@ -19,6 +26,68 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Nav-bar rules */
+
+nav{
+    flex: 1;
+    text-align: right;
+    z-index: 100;
+    margin-right: 50px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    font-family: var(--font);
+    font-weight: var(--semi-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+nav ul li a:hover {
+    color: var(--icon-color-main);
+    cursor: pointer;
+}
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    z-index: 100;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-color: var(--accent-color);
+}
+
+.floatingNav{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px;
+}
+
+/* Top left logo */
+
+.logo {
+    padding-left: 30px;
+    font-family: var(--font);
+    font-weight: var(--bold);
+}
+
+.lowercase {
+    font-family: var(--font);
+    font-weight: var(--light);
+}
+
+/* Rest */
 
 body {
     background-color: var(--bg-color);
@@ -43,11 +112,13 @@ body {
     position: relative;
 }
 
-.intro, .skills {
+/* Intro rules */
+
+.intro{
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 7vh;
+    height: 100vh;
 }
 
 .content-banner {
@@ -61,7 +132,7 @@ body {
     content: '';
     position: absolute;
     top: 0; left: 0;
-    border-top: 20px solid black;
+    border-top: 20px solid white;
     border-right: 20px solid var(--main-color);
     width: 100;
 }
@@ -87,6 +158,8 @@ body {
     position: absolute;
     left: 25%;
     font-family: var(--font);
+    font-weight: var(--semi-bold);
+    color: white;
     font-size: 2.0rem;
 }
 
@@ -97,25 +170,38 @@ body {
     font-size: 2.0rem;
 }
 
-.intro{
+.intro-left-content, .intro-right-content {
+    margin: 50px;
     padding: 10px;
-    margin-bottom: 30px;
-}
-
-.intro-content {
-    margin: auto;
-    padding: 20px;
+    max-width: 400px;
+    font-family: var(--font);
 }
 
 .intro-description {
-    font-size: 1.2rem;
-    font-family: var(--font-accent);
+    font-size: 1.8rem;
+    font-family: var(--font);
 }
 
 .intro-text {
     font-size: 2.5rem;
     font-family: var(--font);
+    font-weight: var(--semi-bold);
     margin: auto;
+}
+
+.scroll-down-info {
+    margin-left: 60px;
+    padding: 10px;
+    display: table;
+}
+
+.scroll-down-info:hover {
+    transform: translateY(.50rem);
+    cursor: pointer;
+}
+
+#arrow {
+    margin-left: 30px;
 }
 
 .vertical {
@@ -129,17 +215,24 @@ body {
     border-width: 3px;
 }
 
-.experience-title {
+/* About rules */ 
+
+.about {
+    height: 40vh;
+}
+
+.about-title {
 	display: flex;
 	flex-basis: 100%;
 	align-items: center;
 	margin: -25px -8px;
     font-family: var(--font);
     font-size: 2.5rem;
+    font-weight: var(--bold);
 }
 
-.experience-title::before,
-.experience-title::after {
+.about-title::before,
+.about-title::after {
 	content: "";
 	flex-grow: 1;
 	background: var(--accent-color);
@@ -155,21 +248,25 @@ body {
     padding: 0;
 }
 
-.experience-container{
+.about-container{
     border-left: 2px solid var(--accent-color);
     border-right: 2px solid var(--accent-color);
-    height: 100%;
+    border-bottom: 2px solid var(--accent-color);
     margin: auto;
     padding: 50px;
 }
 
-.experience-content{
+.about-content{
     font-family: var(--font-accent);
     font-size: 1.2rem;
 }
 
+.about-description {
+    font-size: 1.2rem;
+    font-family: var(--font);
+}
+
 footer{
-    position: fixed;
     width: 100%;
     border-top-width: 2px;
     border-top-style: solid;
@@ -182,5 +279,7 @@ footer{
     width: 400px;
     text-align:center;
     padding:10px;
-    font-family: var(--font-accent);
+    font-family: var(--font);
+    font-weight: var(--light);
+    color: black;
 }
