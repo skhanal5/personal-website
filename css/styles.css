@@ -4,11 +4,12 @@
 /* Reusable variables */
 
 :root {
-    --main-color: #0075F2;
-    --secondary-color: #268fff;
-    --bg-color: white;
+    --main-color: #FC4E04;
+    --secondary-color: #ff7b42;
+    --bg-color: #f5f5f5;
     --text-color: black;
     --accent-color: #e1e3e1;
+    --alt-color: #D1E8DE;
     --bg-text-color: rgb(225, 227, 225,.4);
     --font: 'Inter', sans-serif;
     --extra-light: 200;
@@ -23,6 +24,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 html {
@@ -63,7 +66,7 @@ nav ul li a:hover {
 }
 
 .navbar {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg-color);
     display: flex;
     align-items: center;
     padding: 25px;
@@ -132,6 +135,7 @@ body {
     position: relative;
     justify-content: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .content-banner {
@@ -230,10 +234,10 @@ body {
 }
 
 .intro-bg-text-right {
-    line-height:100%;
+    line-height:90%;
     position: absolute;
     z-index: -1;
-    bottom: 5%;
+    bottom: 8%;
     left: 55%;
     overflow: hidden;
     font-size: 6rem;
@@ -263,13 +267,14 @@ body {
 
 .about {
     display: flex;
+    height: 30vh;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
-    margin-top: 30px;
+    margin-top: 50px;
+    overflow: hidden;
 }
 
-.about-title {
+.about-title, .experience-title {
     font-family: var(--font);
     font-weight: var(--semi-bold);
     font-size: 2.0rem;;
@@ -291,6 +296,76 @@ body {
 /* Experience rules */
 .experience {
     height: 100vh;
+    margin-top: 50px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.experience-content{
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-banner {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+
+.swiper {
+    width: 1200px;
+    height: 800px;
+    z-index: 100;
+  }
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.experience-card{
+    align-self: center;
+    border-radius: 10px;
+    height: 600px;
+    width: 800px;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,.15);
+    text-align: left;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.experience-top-card{
+    display: flex;
+    flex-direction: row;
+}
+
+.experience-top-info {
+    font-family: var(--font);
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.experience-bottom-card {
+    margin-top: 20px;
+    font-family: var(--font);
+}
+
+.experience-lists {
+    list-style-type: disc;
+    margin-left: 50px;
 }
 
 /* Footer rules */
