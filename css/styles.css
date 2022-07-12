@@ -130,7 +130,7 @@ body {
 
 /* Intro rules */
 
-.intro{
+.intro, .skills{
     display: flex;
     position: relative;
     justify-content: center;
@@ -331,6 +331,21 @@ body {
 .swiper-slide {
     display: flex;
     justify-content: center;
+}
+
+.swiper-pagination-bullet .swiper-pagination-bullet-active {
+    background-color: var(--main-color);
+    opacity: 1;  
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: var(--main-color) !important;
+}
+
+.swiper-pagination-bullet{
+    opacity: 1;
+    background-color: #FFF;
 }
 
 .experience-card{
